@@ -1,9 +1,15 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 function Child({ props }) {
-  let infoAboutAuthor = props;
+  const [counter, setCounter] = useState(0);
 
-  console.log(infoAboutAuthor);
+  let infoAboutAuthor = props;
+  //displays info about author
+  // console.log(infoAboutAuthor);
+
+  useEffect(() => {
+    console.log("page has loaded!! yay!!");
+  }, []);
 
   return (
     <>
@@ -17,6 +23,11 @@ function Child({ props }) {
           </div>
         ))
       )}
+      <div>
+        <h3>{counter}</h3>
+        <button onClick={() => setCounter((prev) => prev + 1)}>add 1</button>
+        <button onClick={() => setCounter((prev) => prev - 1)}>remove 1</button>
+      </div>
     </>
   );
 }
