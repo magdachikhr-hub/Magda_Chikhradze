@@ -1,5 +1,6 @@
 import React from "react";
 import Child from "./Child";
+
 function Parent() {
   let infoAboutAuthor = [
     { id: "23", name: "Wuthering Heights", author: "jane doe" },

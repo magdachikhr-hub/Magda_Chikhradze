@@ -3,13 +3,16 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./App.css";
 import Parent from "./components/Parent";
+import { themeContext } from "./context/ThemeContext";
 function App() {
   //const [count, setCount] = useState(0);
-
+  let theme = "light";
   return (
     <>
       <Header></Header>
-      <Parent></Parent>
+      <themeContext.Provider value={theme}>
+        <Parent></Parent>
+      </themeContext.Provider>
       <Footer></Footer>
     </>
   );
